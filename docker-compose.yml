@@ -1,0 +1,21 @@
+version: "3"
+services:
+  mongo:
+    container_name: token-distributor-mongo
+    image: "mongo:4"
+    network_mode: host
+    restart: always
+  backend:
+    image: token-distributor-dev
+    container_name: token-distributor-backend-dev
+    build:
+      context: ./
+      dockerfile: dev.Dockerfile
+    depends_on:
+      - mongo
+    network_mode: host
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    env_file:
+      - .env

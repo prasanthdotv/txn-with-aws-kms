@@ -1,0 +1,48 @@
+{
+  "name": "erc20-token-transfer",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node ./dist-server/bin/www",
+    "transpile": "babel ./src --out-dir dist-server --copy-files",
+    "clean": "rimraf dist-server",
+    "build": "npm-run-all clean transpile",
+    "dev": "nodemon --exec babel-node src/bin/www.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-kms": "^3.315.0",
+    "@aws-sdk/credential-providers": "^3.315.0",
+    "@ethereumjs/tx": "^3.4.0",
+    "asn1.js": "^5.4.1",
+    "bn.js": "^5.2.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "ethereumjs-tx": "^2.1.2",
+    "ethereumjs-util": "^7.1.5",
+    "express": "^4.17.1",
+    "express-jwt": "^8.4.1",
+    "express-validation": "^4.1.0",
+    "js-sha3": "^0.8.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.0.15",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15",
+    "s3-streamlogger": "^1.9.0",
+    "web3": "^1.6.1",
+    "winston": "^3.8.2",
+    "winston-daily-rotate-file": "^4.7.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "nodemon": "^2.0.15",
+    "npm-run-all": "^4.1.5"
+  }
+}

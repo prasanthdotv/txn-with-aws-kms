@@ -1,0 +1,17 @@
+version: "3"
+services:
+  backend:
+    image: token-distributor
+    container_name: token-distributor-backend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /usr/app/node_modules
+    env_file:
+      - .env
+    ports:
+      - 4000:4000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always

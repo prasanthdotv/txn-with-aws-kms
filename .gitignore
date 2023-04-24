@@ -1,0 +1,9 @@
+.vscode/
+logs/
+node_modules/
+dist-server/
+build/
+*.env
+private-key.pem
+*.pem
+!sample.env
